@@ -10,7 +10,8 @@ def theme_injector():
 
     shutil.copy("background.html", os.path.join("temp", "background.html"))
 
-    shutil.rmtree(os.path.join("temp", "themes"))
+    if os.path.isdir(os.path.join("temp", "themes")):
+        shutil.rmtree(os.path.join("temp", "themes"))
     shutil.copytree("themes", os.path.join("temp", "themes"))
 
     themer_file = open(os.path.join("temp", "themer.css"), "w")
