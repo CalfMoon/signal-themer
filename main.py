@@ -25,7 +25,7 @@ def app_path():
         case "Linux":
             return "/usr/lib/signal-desktop/resources/app.asar"
         case "Windows":
-            return r"C:\Users\user_name\AppData\Local\Programs\signal-desktop\resources\app.asar"
+            return os.path.join(os.getenv("LOCALAPPDATA"), r"Programs\signal-desktop\resources\app.asar")
 
 def selected_theme():
     print("Which theme do you want to use?")
