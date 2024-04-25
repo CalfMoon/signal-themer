@@ -14,3 +14,6 @@ A script for injecting theme into [signal-desktop](https://github.com/signalapp/
 6. Write the name of theme you want to use.
 7. Launch Signal.
 8. Enjoy!
+## Special Thanks
+- [CapnSparrow](https://github.com/CapnSparrow/signal-desktop-themes) for showing this could be done and providing the whatsapp theme.
+- [Foxunderground0](https://github.com/Foxunderground0/Signal-Themes) for providing yuri and zero two theme.
