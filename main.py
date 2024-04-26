@@ -1,23 +1,19 @@
 import os
 import platform
 import shutil
-
 import asarPy
 
-
 def theme_injector():
+    if os.path.isdir("temp"):
+        shutil.rmtree("temp")
     asarPy.extract_asar(app_path(), "temp")
-
     shutil.copy("background.html", os.path.join("temp", "background.html"))
-
     if os.path.isdir(os.path.join("temp", "themes")):
         shutil.rmtree(os.path.join("temp", "themes"))
     shutil.copytree("themes", os.path.join("temp", "themes"))
-
     themer_file = open(os.path.join("temp", "themer.css"), "w")
-    themer_file.write("@import '" + os.path.join("themes", selected_theme()) + "';")
+    themer_file.write("@import 'themes/" + selected_theme() + "';")
     themer_file.close()
-
     asarPy.pack_asar("temp", app_path())
     shutil.rmtree("temp")
 
